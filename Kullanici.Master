@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Kullanici.master.cs" Inherits="YemekTarifiSite.Kullanici" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            font-size: small;
+            font-weight: 500;
+            height: 38px;
+            border-radius=1%;
+        }
+
+        .auto-style9 {
+            font-size: large;
+            text-align: center;
+            font-family: "Comic Sans MS";
+            color: #660066;
+        }
+
+        .auto-style13 {
+            width: 1000px;
+            height: 20px;
+        }
+
+        .auto-style15 {
+            height: 20px;
+            background-color: #A3A3A3;
+            text-align: center;
+            font-weight: normal;
+            border-radius: 10px;
+            border: 1px solid #660066;
+        }
+
+        .auto-style16 {
+            color: #660066;
+            font-family: "Comic Sans MS";
+        }
+
+        .auto-style18 {
+            width: 200px;
+            height: auto;
+            float: left;
+        }
+        .auto-style19 {
+            text-align: center;
+        }
+        .auto-style22 {
+            font-family: "Comic Sans MS";
+        }
+        .auto-style23 {
+            color: #000000;
+        }
+    </style>
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="width: 1000px; height: 200px; margin-left: 150px; background-color: #ce7171;">
+            <asp:Image ID="Image1" runat="server" style="border-radius:2%;" Height="201px" ImageUrl="~/resimler/head1.jpg" Width="1002px" />
+        </div>
+
+        <div style="margin-left: 150px;" class="auto-style13">&nbsp</div>
+        <div style="margin-left: 150px; width: 1000px; height: 40px;">
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style15"><a href="AnaSayfaGiris.aspx"><span class="auto-style16">ANASAYFA</span></a></td>
+                    <td class="auto-style15"><a href="AnaSayfa.aspx"><span class="auto-style16">YEMEKLER</span></a></td>
+                    <td class="auto-style15"><a href="GununYemegi.aspx"><span class="auto-style16">GÜNÜN YEMEĞİ</span></a></td>
+                    <td class="auto-style15"><a href="TarifOner.aspx"><span class="auto-style16">TARİF ÖNER</span></a></td>
+                    <td class="auto-style15"><a href="Hakkımızda.aspx"><span class="auto-style16">HAKKIMIZDA</span></a></td>
+                    <td class="auto-style15"><a href="iletisim.aspx"><span class="auto-style16">İLETİŞİM</span></a></td>
+                </tr>
+            </table>
+        </div>
+        <div style="margin-left: 150px;" class="auto-style13">&nbsp</div>
+
+        <div style="margin-left: 150px; width: 1000px; height: auto;">
+
+            <div style="background-color: #B5A6A3; border-radius:2%;" class="auto-style18">
+                <div class="auto-style19">
+                    <strong class="auto-style9" style="border-bottom: medium dotted #660066; width: 100%; ">KATEGORİLER<br />
+                    </strong>
+                    <br />
+                </div>
+
+               <asp:DataList ID="DataList1" runat="server" Width="200px" Font-Names="Comic Sans MS" Font-Size="Large" ForeColor="#660066" CssClass="auto-style22" >
+                    <ItemTemplate >
+                        <div style="border-bottom-width: 10px solid #00ff21; font-family:'Comic Sans MS';">
+                            <strong style="font-family:'Comic Sans MS';"><a href='KategoriDetay.aspx?Kategori_Id=<%#Eval("Kategori_Id")%>'>
+                                <asp:Label ID="Label1" runat="server" style="color:purple; font-size: large; font-family: 'Comic Sans MS';" Text='<%# Eval("Kategori_Ad") %>' CssClass="auto-style20"></asp:Label>
+                            </a></strong>
+                            <span style="font-family:'Comic Sans MS';" class="auto-style11"><strong>&nbsp;</strong><span class="auto-style23"><span class="auto-style21">[</span></span></span><span class="auto-style23"><span class="auto-style21"><asp:Label ID="Label2" runat="server" CssClass="auto-style11" style="font-size: medium" Text='<%# Eval("Kategori_Adet") %>'></asp:Label>
+                            <span class="auto-style11">]</span></span></span>
+                        </div>
+                    </ItemTemplate>
+                </asp:DataList>
+
+            </div>
+
+            <div style="margin-left: 50px; width: 750px; height: auto; background-color:#B5A6A3; float: left; border-radius:1%;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </form>
+</body>
+</html>
+
